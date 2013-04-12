@@ -8,9 +8,6 @@
        http://aries.apache.org/blueprint/xmlns/blueprint-cm/v1.0.0 http://aries.apache.org/schemas/blueprint-cm/blueprint-cm-1.0.0.xsd
        http://camel.apache.org/schema/blueprint http://camel.apache.org/schema/blueprint/camel-blueprint.xsd">
 
-	<!-- <ext:property-placeholder> -->
-	<!-- <ext:location>file:etc/test.cfg</ext:location> -->
-	<!-- </ext:property-placeholder> -->
 
 	<cm:property-placeholder persistent-id="test">
 		<cm:default-properties>
@@ -33,7 +30,6 @@
 
 	<bean id="helloBean" class="us.hennepin.camel.blueprint.HelloBean">
 		<property name="say" value="${test.var}" />
-		<!-- <property name="say" value="OHAI" /> -->
 	</bean>
 
 </blueprint>
