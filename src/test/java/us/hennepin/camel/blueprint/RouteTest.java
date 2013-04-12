@@ -10,7 +10,11 @@ public class RouteTest extends CamelBlueprintTestSupport {
     protected String getBlueprintDescriptor() {
         return "/OSGI-INF/blueprint/blueprint.xml";
     }
-
+    @Override
+    protected String[] loadConfigAdminConfigurationFile() {
+        // which .cfg file to use, and the name of the persistence-id
+        return new String[]{"etc/test.cfg", "test"};
+    }
     @Test
     public void testRoute() throws Exception {
         // the route is timer based, so every 5th second a message is send
